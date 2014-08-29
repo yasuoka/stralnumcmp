@@ -1,15 +1,14 @@
 alnum_compar
 ============
 
-An alphanumeric text comparator in C language.
+An alphanumeric text comparators in C and Perl, which enables sort like
+followings:
 
-    #include "alphanum_compar.h"
+    9km
+    10km
 
-    int
-    alnum_compar(
-        const char *a,
-        const char *b
-    );
+or
 
-The alnum_compar() function alphanumerically compares NULL terminated
-strings a and b.
+    part9.mp4
+    part10.mp4
+
