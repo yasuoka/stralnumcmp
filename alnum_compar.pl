@@ -28,7 +28,7 @@ sub alnum_compar($$)
 		if ($a[0] =~ /^\d/ && $b[0] =~ /^\d/) {
 			$c = int($a[0]) - int($b[0]);
 		} else {
-			$c = $a[0] <=> $b[0];
+			$c = $a[0] cmp $b[0];
 		}
 		return $c if ($c != 0);
 
