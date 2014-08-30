@@ -30,11 +30,11 @@ stralnumcmp(const char *a, const char *b)
 	char		*err;
 
 	ai = bi = ac = bc = 0;
-	while (a[ai + ac] != '\0' && b[bi + bc] != '\0') {
+	while (a[ai] != '\0' && b[bi] != '\0') {
 
 		ani = isdigit(a[ai]);
 		bni = isdigit(b[bi]);
-		anc = bnc = 0;
+		ac = bc = 0;
 
 		for (ac = 0; a[ai + ac] != '\0';) {
 			++ac;
@@ -65,9 +65,9 @@ stralnumcmp(const char *a, const char *b)
 		bi = bi + bc;
 	}
 
-	for (ai = ai; a[ai] != '\0'; ai++)
+	for (; a[ai] != '\0'; ai++)
 		;
-	for (bi = bi; b[bi] != '\0'; bi++)
+	for (; b[bi] != '\0'; bi++)
 		;
 
 	return (ai - bi);	/* longer is bigger */

@@ -22,6 +22,8 @@ main(int argc, char *argv[])
 {
 	ASSERT(stralnumcmp("JPN-Z",	"JPN-A") > 0);	/* just a ascii sort */
 	ASSERT(stralnumcmp("2",	"1") > 0);	/* just a ascii sort */
+	ASSERT(stralnumcmp("vic1",	"vic0") > 0);
+	ASSERT(stralnumcmp("vic10",	"vic9") > 0);
 	ASSERT(stralnumcmp("10",	"9") > 0);
 	ASSERT(stralnumcmp("E10",	"E9") > 0);
 	ASSERT(stralnumcmp("10E",	"9E") > 0);
