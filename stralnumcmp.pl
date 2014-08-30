@@ -14,7 +14,7 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #
 
-sub alnum_compar($$)
+sub stralnumcmp($$)
 {
 	my ($a0, $b0) = (shift, shift);
 	my $a = $a0;

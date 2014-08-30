@@ -23,7 +23,7 @@
 #include <string.h>
 
 int
-alnum_compar(const char *a, const char *b)
+stralnumcmp(const char *a, const char *b)
 {
 	int		 ai, ac, ani, anc, bi, bc, bni, bnc, cmp;
 	intmax_t	 an, bn;

@@ -1,5 +1,5 @@
-#ifndef ALNUM_COMPAR_H
-#define ALNUM_COMPAR_H 1
+#ifndef STRALNUMCMP_H
+#define STRALNUMCMP_H 1
 
 /*
  * Copyright (c) 2014 YASUOKA Masahiko <yasuoka@yasuoka.net>
@@ -16,7 +16,12 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
+#include <sys/cdefs.h>
 
-int	 alnum_compar(const char *a, const char *b);
+__BEGIN_DECLS
+
+int	 stralnumcmp(const char *a, const char *b);
+
+__END_DECLS
 
 #endif
