@@ -56,8 +56,11 @@ stralnumcmp(const char *a, const char *b)
 			an = strtoimax(a + ai, &err, 10);
 			bn = strtoimax(b + bi, &err, 10);
 			cmp = an - bn;
-		} else
+		} else {
 			cmp = strncmp(a + ai, b + bi, MIN(ac, bc));
+			if (cmp == 0 && ac != bc)
+				return (ac - bc);
+		}
 
 		if (cmp != 0)
 			return (cmp);
