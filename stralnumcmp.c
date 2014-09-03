@@ -31,26 +31,24 @@ stralnumcmp(const char *a, const char *b)
 
 	ai = bi = ac = bc = 0;
 	while (a[ai] != '\0' && b[bi] != '\0') {
-
 		ani = isdigit(a[ai]);
 		bni = isdigit(b[bi]);
 		ac = bc = 0;
 
-		for (ac = 0; a[ai + ac] != '\0';) {
+		do {
 			++ac;
 			anc = isdigit(a[ai + ac]);
 			/* break if the digitness become not equal */
 			if ((ani && !anc) || (!ani && anc))
 				break;
-		}
+		} while (a[ai + ac] != '\0');
 
-		for (bc = 0; b[bi + bc] != '\0';) {
+		do {
 			++bc;
 			bnc = isdigit(b[bi + bc]);
-			/* break if the digitness become not equal */
 			if ((bni && !bnc) || (!bni && bnc))
 				break;
-		}
+		} while (b[bi + bc] != '\0');
 
 		if (ani && bni) {	/* both digit */
 			an = strtoimax(a + ai, &err, 10);
