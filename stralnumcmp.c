@@ -50,7 +50,7 @@ stralnumcmp(const char *a, const char *b)
 				break;
 		} while (b[bi + bc] != '\0');
 
-		if (ani && bni) {	/* both digit */
+		if (ani && bni) {	/* both are digit */
 			an = strtoimax(a + ai, &err, 10);
 			bn = strtoimax(b + bi, &err, 10);
 			cmp = an - bn;
@@ -65,11 +65,7 @@ stralnumcmp(const char *a, const char *b)
 		ai = ai + ac;
 		bi = bi + bc;
 	}
-
-	for (; a[ai] != '\0'; ai++)
-		;
-	for (; b[bi] != '\0'; bi++)
-		;
+	/* both of them are digit and both or one of them reaches nul char */
 
 	return (ai - bi);	/* longer is bigger */
 }
