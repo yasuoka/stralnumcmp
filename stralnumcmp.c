@@ -38,7 +38,7 @@ stralnumcmp(const char *a, const char *b)
 		do {
 			++ac;
 			anc = isdigit(a[ai + ac]);
-			/* break if the digitness become not equal */
+			/* break if the "digit or not" become not equal */
 			if ((ani && !anc) || (!ani && anc))
 				break;
 		} while (a[ai + ac] != '\0');
