@@ -13,14 +13,13 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
-
-#include <sys/param.h>
-
 #include <ctype.h>
 #include <inttypes.h>
 #include <limits.h>
 #include <stdint.h>
 #include <string.h>
+
+#define	MINIMUM(_a, _b)	(((_a) < (_b))? (_a) : (_b))
 
 int
 stralnumcmp(const char *a, const char *b)
@@ -55,7 +54,7 @@ stralnumcmp(const char *a, const char *b)
 			bn = strtoimax(b + bi, &err, 10);
 			cmp = an - bn;
 		} else {
-			cmp = strncmp(a + ai, b + bi, MIN(ac, bc));
+			cmp = strncmp(a + ai, b + bi, MINIMUM(ac, bc));
 			if (cmp == 0 && ac != bc)
 				return (ac - bc);
 		}
