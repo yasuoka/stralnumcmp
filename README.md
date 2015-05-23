@@ -1,8 +1,8 @@
 stralnumcmp
 ===========
 
-An alphanumeric text comparators in C and Perl, which enables sort like
-followings:
+A comparator for text mixed alphabet and numeric characters in C
+language and Perl, which enables sort like the followings:
 
     9km
     10km
