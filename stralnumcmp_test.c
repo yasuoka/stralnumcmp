@@ -33,6 +33,8 @@ main(int argc, char *argv[])
 	ASSERT(stralnumcmp("010",	"8") > 0);	/* not a octal */
 	ASSERT(stralnumcmp("10000",	"010000") < 0);	/* longer is bigger */
 	ASSERT(stralnumcmp("010000",	"10000") > 0);	/* longer is bigger */
+	ASSERT(stralnumcmp("!11",	"aa") < 0);
+	ASSERT(stralnumcmp("!11",	"11") < 0);
 
 	if (failed != 0)
 		abort();

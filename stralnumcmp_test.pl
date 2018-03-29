@@ -9,3 +9,6 @@ die unless $r1[1] eq '10km';
 @r2 = sort stralnumcmp @t2;
 die unless $r2[0] eq 'part9.mp4';
 die unless $r2[1] eq 'part10.mp4';
+
+die unless(stralnumcmp('!11', '11') < 0);
+die unless(stralnumcmp('!11', 'aa') < 0);

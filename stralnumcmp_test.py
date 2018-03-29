@@ -21,6 +21,8 @@ class stralnumcmp_test(unittest.TestCase):
         self.assertTrue(stralnumcmp("10000",    "010000") < 0)
         # longer is bigger
         self.assertTrue(stralnumcmp("010000",   "10000") > 0)
+        self.assertTrue(stralnumcmp("!11",       "11") < 0)
+        self.assertTrue(stralnumcmp("!11",       "aa") < 0)
 
 if __name__ == '__main__':
     unittest.main()

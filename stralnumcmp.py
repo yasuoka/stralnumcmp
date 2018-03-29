@@ -12,7 +12,7 @@ def stralnumcmp(a0, b0):
         if m_a.group(2) and m_b.group(2):
             c = cmp(int(m_a.group(2)), int(m_b.group(2)))
         else:
-            c = cmp(m_a.group(3), m_b.group(3))
+	    c = cmp(m_a.group(2) or m_a.group(3), m_b.group(2) or m_b.group(3))
         if c != 0:
             return c;
         a = a[m_a.end(1):]

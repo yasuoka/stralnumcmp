@@ -5,16 +5,13 @@ function stralnumcmp(a, b)
     while (a:len() > 0 and b:len() > 0) do
 	an = a:match('^%d+')
 	bn = b:match('^%d+')
-	as = not an and nil or a:match('^%D+')
-	bs = not bn and nil or b:match('^%D+')
+	as = an or a:match('^%D+')
+	bs = bn or b:match('^%D+')
+
 	if (an and bn) then
 	    c = tonumber(an) - tonumber(bn)
 	else
-	    if (as and bs) then
-		c = (as < bs) and -1 or ((as > bs) and 1 or 0)
-	    else
-		c = (as == nil) and -1 or 1
-	    end
+	    c = (as < bs) and -1 or ((as > bs) and 1 or 0)
 	end
 	if (c ~= 0) then
 	    return c

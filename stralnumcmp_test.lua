@@ -6,6 +6,7 @@ assert(stralnumcmp('9km', '10km') < 0)
 assert(stralnumcmp('part9.mp4', 'part10.mp4') < 0)
 
 
+
 -- just a ascii sort
 assert(stralnumcmp("JPN-Z",    "JPN-A") > 0)
 -- just a ascii sort
@@ -24,3 +25,6 @@ assert(stralnumcmp("010",      "8") > 0)
 assert(stralnumcmp("10000",    "010000") < 0)
 -- longer is bigger
 assert(stralnumcmp("010000",   "10000") > 0)
+-- comparing chars < '0'
+assert(stralnumcmp("!11",      "aa") < 0)
+assert(stralnumcmp("!11",      "11") < 0)
