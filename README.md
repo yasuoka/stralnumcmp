@@ -2,7 +2,7 @@ stralnumcmp
 ===========
 
 A comparator for text mixed alphabet and numeric characters in C,
-Python, Perl and Lua, which enables sort like the followings:
+Python, Perl, and Lua, which enables sort like the followings:
 
     9km
     10km
