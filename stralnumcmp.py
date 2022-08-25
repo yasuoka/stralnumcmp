@@ -16,7 +16,7 @@ def stralnumcmp(a0, b0):
             b1 = m_b.group(2) or m_b.group(3)
             c = (a1 > b1) - (a1 < b1)
         if c != 0:
-            return c;
+            return c
         a = a[m_a.end(1):]
         b = b[m_b.end(1):]
 
