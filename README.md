@@ -12,7 +12,7 @@ or
     part9.mp4
     part10.mp4
 
-GNU has [strverscmp(3)](http://www.gnu.org/software/libc/manual/html_node/String_002fArray-Comparison.html#index-strverscmp-571)
+GNU libc has [strverscmp(3)](http://www.gnu.org/software/libc/manual/html_node/String_002fArray-Comparison.html#index-strverscmp-571)
 in libc(3).  strverscmp(3) and this stralnumcmp() are similar, but they
 differ the way of interpreting strings with leading zeros.
 strverscmp(3) interprets leading zeros like decimal fractions, more
