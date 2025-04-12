@@ -30,13 +30,13 @@ stralnumcmp(const char *a, const char *b)
 
 	ai = bi = ac = bc = 0;
 	while (a[ai] != '\0' && b[bi] != '\0') {
-		ani = isdigit(a[ai]);
-		bni = isdigit(b[bi]);
+		ani = isdigit((unsigned char)a[ai]);
+		bni = isdigit((unsigned char)b[bi]);
 		ac = bc = 0;
 
 		do {
 			++ac;
-			anc = isdigit(a[ai + ac]);
+			anc = isdigit((unsigned char)a[ai + ac]);
 			/* break if the "digit or not" become not equal */
 			if ((ani && !anc) || (!ani && anc))
 				break;
@@ -44,7 +44,7 @@ stralnumcmp(const char *a, const char *b)
 
 		do {
 			++bc;
-			bnc = isdigit(b[bi + bc]);
+			bnc = isdigit((unsigned char)b[bi + bc]);
 			if ((bni && !bnc) || (!bni && bnc))
 				break;
 		} while (b[bi + bc] != '\0');
